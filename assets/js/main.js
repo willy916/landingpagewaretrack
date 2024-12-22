@@ -178,3 +178,14 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+
+function closeBanner() {
+  const header=document.querySelector('.header')
+  const banner = document.getElementById('banner');
+  banner.style.animation = 'slide-up 0.5s ease forwards';
+  header.style.padding="20px 0"
+  setTimeout(() => banner.remove(), 500); // Supprime le bandeau après l'animation
+}

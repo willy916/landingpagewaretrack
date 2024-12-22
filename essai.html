@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Défilant avec Dégradé</title>
+    <style>
+        /* Styles de base */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        /* Conteneur du bandeau défilant */
+        .scroll-banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #7a18ea, #9b4bf9);
+            color: #fff;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transform: translateY(-100%);
+            animation: slide-down 0.5s ease forwards;
+        }
+
+        /* Conteneur du texte avec masque */
+        .scroll-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        }
+
+        /* Texte défilant */
+        .scroll-text {
+            white-space: nowrap;
+            animation: scroll-text 15s linear infinite;
+            display: inline-block;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Animation du texte défilant */
+        @keyframes scroll-text {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Animation d'apparition */
+        @keyframes slide-down {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* Bouton de fermeture */
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 1.2em;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animation de disparition */
+        @keyframes slide-up {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .scroll-text {
+                font-size: 1em;
+            }
+            .close-btn {
+                width: 25px;
+                height: 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Bandeau défilant -->
+<div class="scroll-banner" id="banner">
+    <div class="scroll-wrapper">
+        <div class="scroll-text">
+            🎉 À votre première inscription, profitez d'un mois d'abonnement GRATUIT ! 🎊
+        </div>
+    </div>
+    <button class="close-btn" onclick="closeBanner()">×</button>
+</div>
+
+
+
+<script>
+    function closeBanner() {
+        const banner = document.getElementById('banner');
+        banner.style.animation = 'slide-up 0.5s ease forwards';
+        setTimeout(() => banner.remove(), 500); // Supprime le bandeau après l'animation
+    }
+</script>
+
+</body>
+</html>

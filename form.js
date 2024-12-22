@@ -29,17 +29,20 @@ console.log(localStorage.getItem("prix"))
 if(localStorage.getItem("prix")==="2500"){
     plan.innerHTML="Plan Standard"
     form_select.options[0].innerHTML="Plan Standard"
+    form_select.options[0].value="2500"
 }
 
 if(localStorage.getItem("prix")==="5000"){
     plan.innerHTML="Plan Premium"
     form_select.options[0].innerHTML="Plan Premium"
+    form_select.options[0].value="5000"
 
 }
 
 if(localStorage.getItem("prix")==="10.000"){
     plan.innerHTML="Plan Professionnel"
     form_select.options[0].innerHTML="Plan Professionnel"
+    form_select.options[0].value="10000"
 
 }
 

@@ -8,6 +8,9 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/1baf9087-144d-4075-8563-b8c540fc74b1/webchat/config.js" defer></script>
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -36,9 +39,17 @@
   ======================================================== -->
 </head>
 
-<body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
+ 
+      <div class="scroll-banner" id="banner">
+        <div class="scroll-wrapper">
+            <div class="scroll-text">
+                🎉 À votre première inscription, profitez d'un mois d'abonnement GRATUIT ! 🎊
+            </div>
+        </div>
+        <button class="close-btn" onclick="closeBanner()">×</button>
+    </div>
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -49,11 +60,12 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html#hero" class="active">Accueil</a></li>
-          <li><a href="index.html#about">Présentation</a></li>
           <li><a href="index.html#features">Statistique</a></li>
           <li><a href="index.html#services">Fonctionnalités</a></li>
           <li><a href="index.html#pricing">Abonnements</a></li>
           <li><a href="index.html#contact">Contactez-nous</a></li>
+          <li><a href="https://app.waretrack.online/dashboard" target="_blank">Se connecter</a></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -75,9 +87,10 @@
             <p data-aos="fade-up" data-aos-delay="100" class="mt-4">Fini les pertes et ruptures de stock !Suivez chaque mouvement de vos stocks, finances et ventes depuis n’importe où.<br></p>
             <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="200">
               <a href="index.html#pricing" class="btn-get-started">Obtenir waretrack</a>
-              <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Vidéo démo</span></a>
+              <a href="https://youtu.be/Tqn_BNXwGOM" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Vidéo démo</span></a>
             </div>
           </div>
+          
           <div class="col-lg-6 position-lg-relative">
 
             <div class="position-lg-absolute z-1 text-center">
@@ -91,7 +104,7 @@
       
 
       <div class="hero-bg" >
-        <img src="assets/img/hero-bg-light.webp" alt="">
+        <img src="assets/img/hero-bg-light.png" alt="">
       </div>
 
 
@@ -234,7 +247,7 @@
 
             <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+                <div class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
                   <i class="bi bi-graph-up-arrow"></i>
                   <div>
                     <h4 class="d-none d-lg-block">Inventaire</h4>
@@ -242,10 +255,10 @@
                       Gardez une vision claire de vos stocks. Suivez les produits vendus et ajustez votre inventaire en temps réel pour éviter les ruptures et optimiser les commandes.
                     </p>
                   </div>
-                </a>
+                </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+                <div class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
                   <i class="bi bi-cash-stack"></i>
                   <div>
                     <h4 class="d-none d-lg-block">Historique de vente (Caisse)</h4>
@@ -253,10 +266,10 @@
                       Accédez à l'historique complet des ventes effectuées par la caisse. Surveillez les transactions, contrôlez les dépenses et sécurisez vos recettes pour une gestion efficace.
                     </p>
                   </div>
-                </a>
+                </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+                <div class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
                   <i class="bi bi-clipboard-data"></i>
                   <div>
                     <h4 class="d-none d-lg-block">Comptabilité</h4>
@@ -264,7 +277,7 @@
                       Disposez d'une vue d'ensemble de vos finances avec la balance comptable, le grand livre, le journal et bien d’autres outils essentiels. Suivez vos revenus et dépenses en détail pour prendre des décisions stratégiques et assurer une gestion financière saine.
                     </p>
                   </div>
-                </a>
+                </div>
               </li>
             </ul><!-- End Tab Nav -->
 
@@ -520,6 +533,7 @@
 
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="pricing-item">
+              <p class="popular">Un mois gratuit</p>
               <h3>Plan Standard</h3>
               <p class="description">Accédez aux fonctionnalités essentielles pour bien démarrer avec Waretrack</p>
               <h4><sup>F</sup><span class="prix">2500</span><span> / mois</span></h4>
@@ -541,7 +555,7 @@
 
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="pricing-item featured">
-              <p class="popular">Populaire</p>
+              <p class="popular">Un mois gratuit</p>
               <h3>Plan Premium</h3>
               <p class="description">Profitez d'outils avancés avec le Plan Premium de Waretrack !</p>
               <h4><sup>F</sup><span class="prix">5000</span><span> / mois</span></h4>
@@ -563,6 +577,7 @@
 
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="pricing-item">
+              <p class="popular">Un mois gratuit</p>
               <h3>Plan Professionnel</h3>
               <p class="description">Bénéficiez de toutes les fonctionnalités de pointe et d’une performance maximale</p>
               <h4><sup>F</sup><span class="prix">10.000</span><span> / mois</span></h4>
@@ -950,6 +965,12 @@
   <script src="assets/js/main.js"></script>
 
   <script src="storage.js"></script>
+
+
+  
+<script>
+
+</script>
 
 </body>
 

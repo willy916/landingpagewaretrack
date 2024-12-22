@@ -39,52 +39,50 @@
 <body class="starter-page-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+ 
+    <div class="scroll-banner" id="banner">
+      <div class="scroll-wrapper">
+          <div class="scroll-text">
+              🎉 À votre première inscription, profitez d'un mois d'abonnement GRATUIT ! 🎊
+          </div>
+      </div>
+      <button class="close-btn" onclick="closeBanner()">×</button>
+  </div>
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/Fichier 4.png" alt="">
-        
-      </a>
+    <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <img src="assets/img/Fichier 4.png" alt="">
+      
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html#hero">Accueil</a></li>
-          <li><a href="index.html#about">Présentation</a></li>
-          <li><a href="index.html#features">Statistique</a></li>
-          <li><a href="index.html#services">Fonctionnalités</a></li>
-          <li><a href="index.html#pricing">Abonnements</a></li>
-          <li><a href="index.html#contact">Contactez-nous</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero">Accueil</a></li>
+        <li><a href="index.html#features">Statistique</a></li>
+        <li><a href="index.html#services">Fonctionnalités</a></li>
+        <li><a href="index.html#pricing">Abonnements</a></li>
+        <li><a href="index.html#contact">Contactez-nous</a></li>
+        <li><a href="https://app.waretrack.online/dashboard" target="_blank">Se connecter</a></li>
 
-      <a class="btn-getstarted" href="index.html#pricing">Obtenir</a>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-    </div>
-  </header>
+    <a class="btn-getstarted" href="index.html#pricing">Obtenir</a>
+
+  </div>
+</header>
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Formulaire d'Inscription</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Acceuil</a></li>
-            <li class="current">Formulaire d'Inscription
-            </li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
+
 
     <!-- Starter Section Section -->
     <section id="starter-section" class="starter-section section" >
 
       <!-- Section Title -->
-      <div class="container section-title pb-0" data-aos="fade-up">
-        <h2>Formulaire d'Inscription</h2>
+      <div class="container section-title pb-0" data-aos="fade-up" style="margin-top:120px">
+        <h2>Formulaire d'inscription</h2>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up">
@@ -105,7 +103,7 @@
                   <div class="badge badge-primary-soft fs-6 mb-3 w-100 text-center" style="background-color: rgba(98, 75, 255, .1); color: rgb(122 24 234);">Abonnement : <span class="plan">Plan premium</span> <h3 class="m-1"><span class="prix">5000</span>F/mois</h3></div>
                   <h2 class="h3">Inscription</h2>
                   <h3 class="fs-6 fw-normal text-secondary m-0">Remplissez ce formulaire pour obtenir Waretrack</h3>
-                  <div class="badge badge-primary-soft fs-6 mb-3 w-100 d-flex justify-content-center align-items-center mt-2 alertform" style="background-color: rgba(220, 53, 69, .1); color: #dc3545;display: none!important;">Veuillez remplir les champs vides.</div>
+                  <div class="badge badge-primary-soft fs-6 mb-3 w-100 justify-content-center align-items-center mt-2 alertform" style="background-color: rgba(220, 53, 69, .1); color: #dc3545;display: none!important;">Veuillez remplir les champs vides.</div>
                 </div>
 
               </div>
@@ -140,12 +138,11 @@
                 <div class="col-12">
                   <label for="lastName" class="form-label">Machine</label>
                   <select class="form-select" aria-label="Default select example">
-                    <option selected>Machine de scan et reçus(100.000fr)</option>
-                    <option>Machine d'impression de reçus(50.000f)</option>
-                    <option>Machine de scan(50.000f)</option>
+                    <option value="10000" selected>Machine de scan, reçus et ordinateur(350.000fr)</option>
+                    <option value="50000">Machine d'impression de reçus(50.000f)</option>
+                    <option value="50000">Machine de scan(50.000f)</option>
+                    <option value="50000">Ordinateur(250.000f)</option>
                     <option>Aucun</option>
-
-
                   </select>
                 </div>
 
@@ -166,7 +163,7 @@
             <div class="row">
               <div class="col-12">
                 <hr class="mt-5 mb-4 border-secondary-subtle">
-                <p class="m-0 text-secondary text-center">Vous avez déjà un compte ? Se connecter <a href="#!" class="link-primary text-decoration-none">Se connecter</a></p>
+                <p class="m-0 text-center">Vous avez déjà un compte ? <a href="https://app.waretrack.online/auth/login"  target="_blank" class="text-decoration-none" style="color: rgb(122 24 234);">Se connecter</a></p>
               </div>
             </div>
 

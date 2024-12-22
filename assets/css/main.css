@@ -145,9 +145,10 @@ h6 {
 .header {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  padding: 0px 0px 20px 0px;
   transition: all 0.5s;
   z-index: 997;
+ flex-direction:column
 }
 
 .header .logo {
@@ -1507,12 +1508,12 @@ section,
   position: relative;
 }
 
-.pricing .featured .popular {
+.popular {
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: #ff7d8566;
+  color: #f46363;
   padding: 4px 15px 6px 15px;
   margin: 0;
   border-radius: 5px;
@@ -1964,4 +1965,118 @@ section,
     height: 250px;
     background-position:top!important
   }
+}
+
+
+
+
+
+
+
+
+
+/* Styles de base */
+
+
+/* Conteneur du bandeau défilant */
+.scroll-banner {
+    width: 100%;
+    background: linear-gradient(90deg, #7a18ea, #9b4bf9);
+    color: #fff;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: translateY(-100%);
+    animation: slide-down 0.5s ease forwards;
+}
+
+/* Conteneur du texte avec masque */
+.scroll-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+/* Texte défilant */
+.scroll-text {
+    white-space: nowrap;
+    animation: scroll-text 15s linear infinite;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Animation du texte défilant */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Animation d'apparition */
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Bouton de fermeture */
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.2em;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Animation de disparition */
+@keyframes slide-up {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .scroll-text {
+        font-size: 1em;
+    }
+    .close-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
 }
